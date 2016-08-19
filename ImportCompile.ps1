@@ -7,6 +7,7 @@ $ConfigData = @{
         @{
             NodeName = "*"
             PSDscAllowPlainTextPassword = $True
+            PSDscAllowDomainUser = $True
          },
         @{
             NodeName = "Examplefile"
