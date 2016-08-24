@@ -25,7 +25,7 @@
 			
 			xDNSServerAddress DNS_Settings
             {
-				Address = "10.0.0.4"
+				Address = "10.7.0.4"
 				InterfaceAlias = "Ethernet"
 				AddressFamily = "IPv4"
 			}        
