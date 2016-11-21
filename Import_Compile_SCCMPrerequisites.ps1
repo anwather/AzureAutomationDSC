@@ -1,5 +1,5 @@
 ﻿$resourceGroupName = "AA-Automation"
-$automationAccountName = "AADSCFull"
+$automationAccountName = "AADSC-Full"
 $automationAccount = Get-AzureRmAutomationAccount -ResourceGroupName $resourceGroupName -Name $automationAccountName
 
 Import-AzureRmAutomationDscConfiguration -SourcePath "C:\Source\AzureAutomationDSC\SCCMPrerequisites.ps1" `
@@ -9,4 +9,6 @@ Import-AzureRmAutomationDscConfiguration -SourcePath "C:\Source\AzureAutomationD
                                          -Force `
                                          -Verbose
 
-$automationAccount | Start-AzureRmAutomationDscCompilationJob -ConfigurationName CredentialSample -ConfigurationData $ConfigData -Verbose
+$automationAccount | Start-AzureRmAutomationDscCompilationJob -ConfigurationName SCCMPrerequisites -ConfigurationData $ConfigData -Verbose
+
+$automationAccount | Get-AzureRmAutomationDscOnboardingMetaconfig -OutputFolder C:\Temp
